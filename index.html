@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1">
+	    <meta charset="utf-8">
+		<title>Grade Calculator</title>
+		 <link rel="stylesheet" href="css/kiran.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="cordova.js"></script>
+                 <script src="//platform.linkedin.com/in.js" type="text/javascript">
+                api_key: 75qdrj9f8xg8zh
+                authorize: true
+                </script>
+	</head>
+    
+    
+    <body>
+	<div data-role="page" data-theme="b" id="login">
+        <div data-role="header">
+            <h1>Grade Calculator</h1>
+        </div>
+		<div role="main" class="ui-content">
+		<center>
+		<h2> Welcome to Grade Calculator </h2> <br>
+		<p> Click below to view Student Information and Course Description</p> <br>
+		<a href="#page1" id='page1' class="ui-shadow ui-corner-all" data-role="button" data-icon="arrow-r" data-transition="slide" data-inline="true" data-iconpos="right" >Click Me</a> <br>
+</div>		
+</div>
+<div data-role="page" data-theme="a" id="page1" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>Grade Calculator</h1>
+        </div>
+		<div role="main" class="ui-content">
+		<p> Student Info <br> First Name: Kiran <br> Last Name: Suryanarayana <br> Email Id: kiran.suryanarayana@sjsu.edu <br> Phone No: 123-456-789 <br> SJSU ID: 009258600 <br> </p>
+		<p> Course Name: CMPE 235 Mobile Software System Design <br> Course Description: <br> Study of wireless-based software systems in design and engineering, underlying networks, infrastructures and frameworks, wireless security, mobile user security & privacy (i.e. biometric security), emergent mobile programming platforms and technologies (such as RFID/Barcode/NFC), mobile commerce and service application systems. Prerequisite: CMPE 220 or CMPE 202 or instructor consent. <br> <br> <br></p>
+		<center>
+		<p> Your are all set to calculate your grade now!!!</p> <br> <br>
+		<p>Click below to continue<p><br>			
+        <a href="#mainPage" class="ui-btn ui-corner-all ui-btn-inline">Proceed</a>
+	</div>
+</div>
+		
+	<!--<div data-role="page" data-theme="b" id="login">
+        <div data-role="header">
+            <h1>Grade Calculator</h1>
+        </div>
+         <div role="main" class="ui-content">
+            <center>
+            <script type="IN/Login"> 
+                Hello, <?js= firstName ?><?js= lastName ?>
+				<br>
+				<h3> Wellcome to Grade Calaculator </h3>
+				
+                <a href="#mainPage" class="ui-btn ui-corner-all ui-btn-inline">Proceed</a>
+				
+				<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+				<script type="IN/Share" data-counter="top"></script>
+				
+                </div>
+            </script>
+            </center>
+         </div>
+        </div>-->
+ 
+        <div data-role="page" data-theme="c" class="" id="mainPage">
+	    <div data-role="header" class="">
+		<h1><center>Grade Calculator</center>
+                </h1>
+		<a href="#settingsPage" id='settingsButton' class="ui-btn-right ui-shadow ui-corner-all" data-role="button" data-transition="flip" data-icon="gear">Settings</a>
+               <!-- <a href="#" id='logoutButton' class="ui-btn-left ui-shadow ui-corner-all" data-icon="back" data-transition="fade" data-role="button">Logout</a>-->
+	    </div>
+	    <div data-role="content" class="">
+                 
+		<form>
+		    
+		    <div data-role="fieldcontain">
+			<label for="Points"><h4>Points</h4></label> 
+			<p>Enter your points for each of the fields</p>
+			<label for="Homeworks">Homeworks</label>
+			<input type="range" name="Homeworks" id="Homeworks" value="0" min="0" max="10" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="Labs">Labs</label>
+			<input type="range" name="Labs" id="Labs" value="0" min="0" max="10"  />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="Project">Project</label>
+			<input type="range" name="Project" id="Project" value="0" min="0" max="20" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="Presentation">Presentation</label>
+			<input type="range" name="Presentation" id="Presentation" value="0" min="0" max="20" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="Midterm">Midterm</label>
+			<input type="range" name="Midterm" id="Midterm" value="0" min="0" max="20" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="Final">Final</label>
+			<input type="range" name="Final" id="Final" value="0" min="0" max="20" />
+			    </div>
+		    
+		    <p style="text-align: center;">
+		    <a href="#" id="computeGrade" class="ui-shadow ui-corner-all" data-role="button" data-transition="fade" data-icon="check">Compute Grade</a>
+		    </p>
+		    
+                    <p>
+		    <label>Your Percentage is</label>
+			<p style="text-align: center;">
+		    <span id="finalPercentage">TBD</span> </p>
+		    </p>
+		    <p >
+		    <label>Final Grade is</label>
+			<p style="text-align: center;"> 
+		    <span id="finalGrade">TBD</span>
+		    </p>
+                   <!-- <p>
+		    <label>Total Points</label>
+		    <span id="totalPoints">TBD</span>
+		    </p>
+                    <p>
+		    <label>Max Points</label>
+		    <span id="maxPoints">TBD</span>
+		    </p> -->
+		    
+		</form>
+	    </div>
+	</div>
+	<div data-role="page" data-theme="a" class="" id="settingsPage" data-add-back-btn="true" >
+	    <div data-role="header" class="">
+		 <a href="#" id='cancelSettings' class="ui-btn-left ui-shadow ui-corner-all" data-icon="delete" data-transition="flip" data-rel="back">Cancel</a>
+		<h1>Grade - Settings</h1>
+	    </div>
+	    <!--<div data-role="tabs" id="tabs">
+		<div data-role="navbar">
+		    <ul>
+			<li><a href="#MaxPoint" >Maximum<br>Points</a></li>
+			<li><a href="#ScalingFactors" >Scaling<br>Factors(%)</a></li>
+			<li><a href="#GradeCuttOff" ">Grade<br>Cutoff(%)</a></li>
+		    </ul>
+		</div>
+		<div id="MaxPoint">-->
+		<div data-role="content" class="">
+				<form>
+					<div data-role="collapsible" data-theme="c" >
+						<h3>Maximum Points</h3>
+						<p> Set the maximum points for each field </p>
+			<div data-role="fieldcontain">
+			<label for="HomeworksMax">Homeworks</label>
+			<input type="range" name="HomeworksMax" id="HomeworksMax" value="10" min="0" max="500" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="LabsMax">Labs</label>
+			<input type="range" name="LabsMax" id="LabsMax" value="10" min="0" max="500"  />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="ProjectMax">Project</label>
+			<input type="range" name="ProjectMax" id="ProjectMax" value="20" min="0" max="500" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="PresentationMax">Presentation</label>
+			<input type="range" name="PresentationMax" id="PresentationMax" value="20" min="0" max="500" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="MidtermMax">Midterm</label>
+			<input type="range" name="MidtermMax" id="MidtermMax" value="20" min="0" max="500" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="FinalMax">Final</label>
+			<input type="range" name="FinalMax" id="FinalMax" value="20" min="0" max="500" />
+			    </div>
+			    <a href="#" id='saveMaxSettings' class="ui-shadow ui-corner-all" data-role="button" data-inline="true" data-transition="fade" data-icon="check" >Save</a>
+			    </p>
+			</div>
+		    <div data-role="collapsible" data-theme="c" >
+						<h3>Scaling Factors</h3> 
+						<p> Set scaling percentage for each field </p>
+		   <!-- <div data-role="fieldcontain">
+			<label for="TotalMaxPoints">Maximum Points</label>
+			<input type="range" name="TotalMaxPoints" id="TotalMaxPoints" value="100" min="0" max="500" />
+			    </div>-->
+                        
+			<div data-role="fieldcontain">
+			<label for="HomeworksPercent">Homeworks</label>
+			<input type="range" name="HomeworksPercent" id="HomeworksPercent" value="10" min="0" max="100" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="LabsPercent">Labs</label>
+			<input type="range" name="LabsPercent" id="LabsPercent" value="10" min="0" max="100"  />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="ProjectPercent">Project </label>
+			<input type="range" name="ProjectPercent" id="ProjectPercent" value="20" min="0" max="100" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="PresentationPercent">Presentation </label>
+			<input type="range" name="PresentationPercent" id="PresentationPercent" value="20" min="0" max="100" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="MidtermPercent">Midterm </label>
+			<input type="range" name="MidtermPercent" id="MidtermPercent" value="20" min="0" max="100" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="FinalPercent">Final </label>
+			<input type="range" name="FinalPercent" id="FinalPercent" value="20" min="0" max="100" />
+			    </div>
+			    <a href="#" id='savePercentSettings' class="ui-shadow ui-corner-all" data-role="button" data-inline="true" data-transition="fade" data-icon="check">Save</a>
+   		</div>
+		<div data-role="collapsible" data-theme="c" >
+						<h3>Config Grade</h3>
+						<p> Set the percentage range for each grade </p>
+			<div data-role="fieldcontain">
+			<label for="gradeA">A</label>
+			<input type="range" name="gradeA" id="gradeA" value="90" min="0" max="100" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="gradeB">B</label>
+			<input type="range" name="gradeB" id="gradeB" value="80" min="0" max="100"  />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="gradeC">C</label>
+			<input type="range" name="gradeC" id="gradeC" value="70" min="0" max="100" />
+			    </div>
+		    
+		    <div data-role="fieldcontain">
+			<label for="GradeD">D</label>
+			<input type="range" name="gradeD" id="gradeD" value="60" min="0" max="100" />
+			    </div>
+		    
+		    
+			    <a href="#" id='saveSettings' class="ui-shadow ui-corner-all" data-role="button" data-inline="true" data-transition="fade" data-icon="check" >Save</a>
+			    </p>
+		    </form>
+			
+		
+	
+		</div>
+	    </div>
+	    
+	
+       
+      	 <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+		</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1415653757" alt="setstats" border="0" width="1" height="1"></noscript><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/866f949dfc4b938ab836dd1f5449b291?id=195e5314a8ea";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>
